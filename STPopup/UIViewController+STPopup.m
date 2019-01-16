@@ -73,7 +73,7 @@
 
 - (void)st_dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
 {
-    if (!self.popupController) {
+    if (!self.popupController || self.presentedViewController) {
         [self st_dismissViewControllerAnimated:flag completion:completion];
         return;
     }
